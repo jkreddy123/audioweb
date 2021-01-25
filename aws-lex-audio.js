@@ -488,7 +488,7 @@ function playOutput(base64_string){
         	'textmsg': text_msg,
         	'action':  localStorage.getItem("action"),
         	'timestring': date.toDateString(),
-        	'datestring': date.getUTCHours() + date.getUTCMinutes(),
+        	'datestring': date.getUTCHours().toString() + date.getUTCMinutes().toString(),
   	}
        }
      };
