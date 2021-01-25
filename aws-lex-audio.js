@@ -487,8 +487,8 @@ function playOutput(base64_string){
         	'audioURL': audio_file_url,
         	'textmsg': text_msg,
         	'action':  localStorage.getItem("action"),
-        	'timestring': date.toDateString(),
-        	'datestring': date.getUTCHours().toString() + date.getUTCMinutes().toString(),
+        	'timestring': date.getUTCHours().toString()+':'+ date.getUTCMinutes().toString(),
+        	'datestring': date.toDateString(),
   	}
        }
      };
@@ -508,7 +508,10 @@ function playOutput(base64_string){
 
      fetch(url,otherparam)
      .then(data=>{return data.json()})
-     .then(res=>{console.log(res.queryResult); displayTip(state,res.queryResult.action); var dialog_msg = parseDialog(state, res.queryResult.fulfillmentMessages); tts(state,dialog_msg) })
+     .then(res=>{console.log(res.queryResult); 
+                 displayTip(state,res.queryResult.action); 
+                 var dialog_msg = parseDialog(state, res.queryResult.fulfillmentMessages);
+                 tts(state,dialog_msg) })
      .catch(error=>{console.log(error);state.onError(error)})
     //});
     console.log(token);
@@ -530,24 +533,20 @@ function playOutput(base64_string){
   }
   function displayTip(state,action){
     localStorage.setItem("action",action);
+    var tip = document.getElementById('tip');
     if(action == "input.welcome"){
-        var tip = document.getElementById('tip');
         tip.textContent = 'say \"ask 12 table\" OR \"ask tables upto 15\"';
     }
     if(action == "askTables"){
-        var tip = document.getElementById('tip');
         tip.textContent = 'say \"ok\" OR \"yes\" OR \"fine"';
     } 
     if(action == "askMultiplicationAction"){
-        var tip = document.getElementById('tip');
         tip.textContent = 'say \"10\" OR \"i dont know\" OR \"skip\"';
     }   
     if(action == "tryAnswerAgainAction"){
-        var tip = document.getElementById('tip');
         tip.textContent = 'say \"10\" OR \"i dont know\" OR \"skip\"';
     }       
     if(action == "input.unknown"){
-        var tip = document.getElementById('tip');
         tip.textContent = 'say \"20\" OR \"i dont know\" OR \"skip\" OR \"start over\"';
     }               
   }
