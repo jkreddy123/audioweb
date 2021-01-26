@@ -487,7 +487,7 @@ function playOutput(base64_string){
         	'audioURL': audio_file_url,
         	'textmsg': text_msg,
         	'action':  localStorage.getItem("action"),
-        	'timestring': date.getUTCHours().toString().padStart(2, "0")+':'+ date.getUTCMinutes().toString().padStart(2, "0"),
+        	'timestring': date.getHours().toString().padStart(2, "0")+':'+ date.getMinutes().toString().padStart(2, "0"),
         	'datestring': date.toDateString(),
   	}
        }
