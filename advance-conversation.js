@@ -38,6 +38,6 @@
    function stopRecord_click() {
 	   console.log("stop recording mouse up");
 	   if(conversation != null){
-	   	conversation.stopRecordingManually();
+	   	conversation.advanceConversation();//stopRecordingManually();
 	   }
    };
