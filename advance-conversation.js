@@ -11,6 +11,7 @@
         
         config = {
             lexConfig: { botName: "jk"},//document.getElementById('BOT').value }
+	    silenceDetection: false,
             profile: userdata
         };
 
@@ -33,3 +34,10 @@
         });
         conversation.advanceConversation();
     };
+
+   function stopRecord_click() {
+	   console.log("stop recording mouse up");
+	   if(conversation != null){
+	   	conversation.stopRecordingManually();
+	   }
+   };
