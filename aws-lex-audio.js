@@ -284,7 +284,12 @@
         currentState.advanceConversation();
       }
     };
-
+    
+    this.stopRecordingManually = function() {
+        audioControl.stopRecording();
+        currentState.advanceConversation();
+    }
+    
     this.transition = function(conversation) {
       currentState = conversation;
       var state = currentState.state;
