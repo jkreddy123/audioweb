@@ -11,7 +11,7 @@
         
         config = {
             lexConfig: { botName: "jk"},//document.getElementById('BOT').value }
-	    silenceDetection: false,
+	    silenceDetection: true,
             profile: userdata
         };
 
