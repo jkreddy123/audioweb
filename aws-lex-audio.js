@@ -267,16 +267,16 @@
       //this.onError('A Bot name must be provided.');
       //return;
     }
-    if (!AWS.config.credentials) {
+    //if (!AWS.config.credentials) {
       //this.onError('AWS Credentials must be provided.');
       //return;
-    }
-    if (!AWS.config.region) {
+    //}
+    //if (!AWS.config.region) {
       //this.onError('A Region value must be provided.');
       //return;
-    }
+    //}
 
-    lexruntime = new AWS.LexRuntime();
+    //lexruntime = new AWS.LexRuntime();
 
     this.onSilence = function() {
       if (config.silenceDetection) {
